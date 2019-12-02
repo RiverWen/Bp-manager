@@ -1,0 +1,71 @@
+.switchBox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+.messageTitle{
+    font-size: 28rpx;
+    color:#666
+}
+.messageTitleInput{
+    height:60rpx;
+    border: 1rpx solid #ddd;
+    display: flex;
+    align-items: center;
+    padding: 0 15rpx;
+    margin: 0 0 20rpx 0
+}
+.messageTitleInput input{
+    font-size: 28rpx;
+    flex-grow: 1;
+}
+.messageContentInput{
+    border: 1rpx solid #ddd;
+    padding:15rpx;
+    margin: 0 0 20rpx 0;
+    display: flex;
+}
+.messageContentInput textarea{
+    font-size: 28rpx;
+    flex-grow: 1
+}
+.messageBtnBox{
+    display: flex;
+    justify-content: space-around;
+    padding: 20rpx;
+}
+.imageUploadBox{
+    display: flex;
+    margin: 15rpx 0;
+}
+.imagePreview{
+    width:175rpx;
+    height:175rpx;
+    border-radius: 25rpx;
+    border:1rpx solid #ddd;
+}
+.imagePreview image{
+    width:175rpx;
+    height:175rpx;
+    border-radius: 25rpx;
+    border:1rpx solid #ddd;
+}
+.imagePreview icon{
+    position: absolute
+    
+}
+.addBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:175rpx;
+    height:175rpx;
+    border-radius: 25rpx;
+    border:1rpx solid #ddd;
+    font-size: 72rpx;
+    margin: 5rpx 10rpx
+    
+}
+.onselect{
+    background-color: #eee
+}

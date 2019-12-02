@@ -1,0 +1,52 @@
+<van-toast id="van-toast" />
+<van-tabs animated color="#fca104" type="line">
+  <van-tab title="信息管理">
+        <van-collapse value="{{ messageActiveNames }}" bind:change="messageOnChange">
+            <van-collapse-item title="新建信息" name="1">
+                <form bindsubmit="newMessageSubmit" bindreset="newMessageReset">
+
+                    <view class="messageTitle">标题(title)-20字以内</view>
+                    <view class="messageTitleInput">
+                        <input name="title"type="text" maxlength="20"value="{{title}}"></input>
+                    </view>
+
+                    <view class="messageTitle">内容(content)-300字以内</view>
+                    <view class="messageContentInput">
+                        <textarea name="content" maxlength="300" value="{{content}}"></textarea>
+                    </view>
+
+                 <view class="messageTitle">上传图片(imageUrl)-限传1张</view>
+                 <view class="imageUploadBox">
+                    <view class="imagePreview" wx:if="{{tempFilePaths[0]}}">
+                        <icon type="clear" color="#2e9c09" bindtap="clearImage"></icon>
+                        <image src="{{tempFilePaths[0]}}"mode="widthFit"></image>
+                    </view>
+                    <view class="addBtn" bindtap="selectImage" hover-class="onselect">+</view>
+                 </view>
+
+                <view class="switchBox">
+                    <view class="messageTitle">展示开关(show)</view>
+                    <van-switch checked="{{messageSw}}" size="24px" name="show"
+                    active-color="#2e9c09"
+                    inactive-color="#999" 
+                    bind:change="onSwitchChange"
+                    data-id="messageSw"/>
+                </view>
+                <view class="messageBtnBox">
+                <button type="primary" size="mini" form-type="submit">上传信息</button>
+                <button type="primary" size="mini" form-type="reset">重置表单</button>
+                </view>
+                </form>
+            </van-collapse-item>
+            <van-collapse-item title="修改信息" name="2">
+                修改
+            </van-collapse-item>
+            <van-collapse-item title="删除信息" name="3" >
+                删除
+            </van-collapse-item>
+        </van-collapse>
+  </van-tab>
+  <van-tab title="控制开关"><van-cell title="建设中..." size="large" /></van-tab>
+  <van-tab title="商品管理"><van-cell title="建设中..." size="large" /></van-tab>
+  <van-tab title="其它管理"><van-cell title="建设中..." size="large" /></van-tab>
+</van-tabs>

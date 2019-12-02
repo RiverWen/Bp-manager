@@ -1,0 +1,100 @@
+
+
+
+.constructing{
+    width:100%;
+    height: 650rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:#999
+}
+.constructing image{
+    width:150rpx;
+    height:150rpx;
+    margin: 25rpx
+}
+.blue{
+    background-color: #3D6AFF
+}
+.blueS{
+    background-color: #5E9BEB
+}
+.rowBox{
+    height: 140rpx;
+    display: flex;
+    margin: 10rpx 0
+    
+}
+.col1{
+    background-color: #2e9c09;
+    width:25rpx;
+}
+
+.col2{
+    background-color: #fff;
+    width:140rpx;
+    border-right: 4rpx dashed #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top:1rpx solid #2e9c09;
+    border-bottom:1rpx solid #2e9c09
+}
+.col2 image{
+    width:90rpx;
+    height:90rpx;
+}
+.col3{
+    width:450rpx;
+    border-top:1rpx solid #2e9c09;
+    border-bottom:1rpx solid #2e9c09;
+    display: flex;
+    flex-direction: column;
+    padding:5rpx 10rpx
+}
+.col3Title{
+    font-size: 32rpx;
+    margin: 5rpx 0;
+    color: #666
+}
+.col3Text{
+    font-size: 24rpx
+}
+.col4{
+    background-color: #2e9c09;
+    width:150rpx;
+    border-top-right-radius: 25rpx;
+    border-bottom-right-radius: 25rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:#ddd
+}
+.col4Title{
+    font-size: 64rpx;
+    margin: 5rpx 0 -15rpx 0
+}
+.messageBlock{
+    margin: 5rpx 0;
+    border-bottom: 1rpx dashed #2e9c09;
+    width:100%;
+    height:2rpx
+}
+.van-card__desc{
+    text-indent:2em;
+    text-align: justify
+}
+.research{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height:350rpx
+}
+.research text{
+    font-size:32rpx;
+    color:#fca104;
+    text-shadow: 1rpx 1rpx 2rpx #ccc
+}

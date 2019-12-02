@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "van-button": "vant-weapp/button",
+    "van-toast": "vant-weapp/toast",
+    "van-popup":"vant-weapp/popup",
+    "van-icon":"vant-weapp/icon",
+    "van-notice-bar":"vant-weapp/notice-bar",
+    "van-row": "vant-weapp/row",
+    "van-col": "vant-weapp/col"
+    
+  }
+}

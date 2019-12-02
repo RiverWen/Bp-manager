@@ -1,0 +1,17 @@
+{
+  "usingComponents": {
+    "van-toast": "vant-weapp/toast",
+    "van-icon": "vant-weapp/icon",
+    "van-transition": "vant-weapp/transition",
+    "van-button": "vant-weapp/button",
+    "van-tab": "vant-weapp/tab",
+    "van-tabs": "vant-weapp/tabs",
+    "van-collapse": "vant-weapp/collapse",
+    "van-collapse-item": "vant-weapp/collapse-item",
+    "van-row": "vant-weapp/row",
+    "van-col": "vant-weapp/col",
+    "van-card": "vant-weapp/card",
+    "van-rate": "vant-weapp/rate"
+    
+    }
+}

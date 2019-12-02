@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/user/user",
+    "pages/analyse/analyse",
+    "pages/tips/tips",
+    "pages/contrl/contrl"
+
+  ],
+  "window": {
+    "backgroundColor": "#000",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fca104",
+    "navigationBarTitleText": "乌贼王子@健康记录助手",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/user/user",
+        "text": "记录",
+        "iconPath":"images/edit-u.png",
+        "selectedIconPath":"/images/edit.png"
+      },
+      {
+        "pagePath": "pages/analyse/analyse",
+        "text": "分析",
+        "iconPath": "images/analyse-u.png",
+        "selectedIconPath": "/images/analyse.png"
+      },
+      {
+        "pagePath": "pages/tips/tips",
+        "text": "贴士",
+        "iconPath": "images/tip-u.png",
+        "selectedIconPath": "/images/tip.png"
+      }
+      
+    ]
+  }
+  
+}

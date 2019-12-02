@@ -1,0 +1,17 @@
+{
+  "usingComponents": {
+    "van-toast": "vant-weapp/toast",
+    "van-icon": "vant-weapp/icon",
+    "van-transition": "vant-weapp/transition",
+    "van-button": "vant-weapp/button",
+    "van-tab": "vant-weapp/tab",
+    "van-tabs": "vant-weapp/tabs",
+    "van-collapse": "vant-weapp/collapse",
+    "van-collapse-item": "vant-weapp/collapse-item",
+    "van-switch":"vant-weapp/switch",
+    "van-cell": "vant-weapp/cell",
+    "van-cell-group": "vant-weapp/cell-group"
+    
+  },
+  "navigationBarTitleText": "控制台"
+}

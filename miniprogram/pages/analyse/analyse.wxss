@@ -1,0 +1,231 @@
+
+.mask{
+    width:100%;
+    height:100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.share{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:600rpx;
+    background-color: #fff;
+    border-radius: 30rpx;
+}
+.shareTitle{
+    font-size: 38rpx;
+    font-weight: bold;
+    text-align: center;
+    color: #2e9c09;
+    width:500rpx;
+    height:40rpx;
+    margin:30rpx 0
+}
+.shareFamous{
+    width:450rpx;
+    height:60rpx;
+    font-size: 26rpx;
+    color:#999999;
+    text-indent: 2em;
+}
+.shareFamousName{
+    width:450rpx;
+    font-size: 24rpx;
+    text-align: right;
+    color:#999999
+}
+.share image {
+    width:500rpx;
+    height: 500rpx
+}
+.shareFoot{
+    width:500rpx;
+    font-size: 18rpx;
+    text-align: right;
+    color:#fca104
+}
+.shareTip{
+    width:450rpx;
+    display: flex;
+    margin: 5rpx 0 0 0
+}
+.shareTipLeft{
+    width:100rpx;
+    color:#999;
+    font-size: 20rpx;
+   
+}
+.shareTipRight{
+    width:350rpx;
+    color:#999;
+    font-size: 20rpx;
+}
+.shareBtn{
+    width:450rpx;
+    height:200rpx;
+    display: flex;
+    align-items: center
+
+}
+
+.report{
+    width:350px;
+    position: fixed;
+    left: 800rpx
+}
+.canvas {
+    width: 750rpx;
+    height: 600rpx
+}
+.canvasBox{
+   margin: 10rpx 0 -10rpx 0
+}
+.titleBox{
+    display: flex;
+    align-items: flex-end;
+
+}
+.titleBlock{
+    width:10rpx;
+    height:45rpx;
+    background-color: #2e9c09;
+    margin: 0 10rpx 0 15rpx
+}
+.titleText{
+    color: #666666
+}
+.titleContent{
+    color:#999999;
+    font-size: 26rpx
+}
+.listBox{
+    display: flex;
+    height:45rpx;
+    width: 100%;
+    font-size: 26rpx;
+    border-bottom: 1rpx solid #eeeeee;
+    margin: 4rpx 0
+}
+.listBlock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:45rpx;
+    height:45rpx;
+}
+.redPoint{
+    background-color: #f02323;
+    width:12rpx;
+    height:12rpx;
+    border-radius: 100%
+}
+.listContent{
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end
+}
+.listBp{
+    font-size: 30rpx;
+    color:#666666
+}
+.listBp text{
+    font-size: 38rpx
+}
+.listDate{
+    color:#999999;
+    margin: 0 30rpx 0 0
+}
+.listIcon{
+    display: flex;
+    align-items: flex-end;
+    color:#999999;
+}
+.listIcon image {
+    width:35rpx;
+    height:35rpx
+}
+
+.space-view{
+    height:25rpx
+}
+.staBox{
+    display: flex;
+    height:45rpx;
+    width: 100%;
+    font-size: 26rpx;
+    border-bottom: 1rpx solid #eeeeee;
+    margin: 4rpx 0;
+}
+.staBlock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:45rpx;
+    height:45rpx;
+}
+.staTitle{
+    font-size: 30rpx;
+    color:#666666;
+    align-self: flex-end
+}
+.staContainer{
+    flex-grow: 1;
+    display: flex;
+    padding: 0 15rpx 0 40rpx;
+    align-items: flex-end;
+    color: #999999;
+}
+.staData {
+    width: 70rpx;
+    font-size: 34rpx;
+    color:#999999;
+    text-align: right
+}
+.reportBtn {
+    width:140rpx;
+    height:70rpx;
+    font-size: 28rpx;
+    color:#fff;
+    background-color: #2e9c09;
+    border: 1rpx solid #2e9c09;
+    position: fixed;
+    bottom: 60rpx;
+    right:0rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999
+}
+.note {
+    width:250rpx;
+    height:70rpx;
+    border:1rpx solid #2e9c09;
+    background-color: #fff;
+    display: flex;
+}
+.noteBlock {
+    width:20rpx;
+    height:70rpx;
+    background-color: #2e9c09
+}
+.noteText {
+    flex-grow: 1;
+    color:#2e9c09;
+    font-size: 28rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+van-transition{
+    position:fixed;
+    bottom:60rpx;
+    right:140rpx
+}

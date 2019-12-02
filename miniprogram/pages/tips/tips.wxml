@@ -1,0 +1,57 @@
+<van-toast id="van-toast" />
+<image src="../../images/ad02.jpg" style="width:750rpx;height:200rpx;" mode="bottom"></image>
+
+<van-tabs animated color="#fca104">
+
+    <van-tab title="健康频道" >
+    <van-collapse value="{{ activeNames }}" bind:change="onChange"name="1" icon="shop-o">
+            <van-collapse-item name="1" icon="question-o">
+            <view slot="title">使用指南</view>
+
+                <view class="rowBox" wx:for="{{help}}" wx:key="*.this">
+                    <view class="col1" ></view>
+                    <view class="col2" ><image src="{{item.src}}"mode="aspectFit"></image></view>
+                    <view class="col3" >
+                        <view class="col3Title">{{item.title}}</view>
+                        <view class="col3Text">{{item.text}}</view>
+                    </view>
+                    <view class="col4" >
+                        <view class="col4Title">{{item.step}}</view>
+                        <view class="col5Text">STEP</view>
+                    </view>
+                </view>
+                   
+            </van-collapse-item>
+
+            <van-collapse-item title="健康常识" name="2" icon="like-o">
+            <block wx:for="{{messageList}}" wx:key="_id" >
+                <van-card  desc="{{item.content}}"  title="{{item.title}}"  thumb="{{ item.fileId }}"/>
+            <view class="messageBlock">
+            </view>
+            </block>
+            </van-collapse-item>
+            
+            <van-collapse-item title="调查问卷" name="3" icon="records">
+            <view class="research">
+                <view>请您为<text>乌贼王子@</text>健康记录助手小程序评分</view>
+                <view><van-rate value="{{ starValue }}" bind:change="onStarChange"touchable="{{false}}" 
+                size="25" /></view>
+                <view>
+                <button type="primary" plain size="mini" bindtap="starSubmit">提交评分</button>
+                </view>
+            </view>
+            </van-collapse-item>
+    </van-collapse>
+    </van-tab>
+
+
+    <van-tab title="商业频道">
+
+        <view class="constructing">
+        <image src="../../images/gift.png"style="width:150rpx; height:150rpx; margin: 25rpx"/>
+        上线有彩蛋，敬请期待...
+        </view>
+
+    </van-tab>
+</van-tabs>
+<button bindtap="enter" wx:if="{{ contrlPage }}">进入管理员页面</button>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-toast": "vant-weapp/toast",
+    "van-icon": "vant-weapp/icon",
+    "van-transition": "vant-weapp/transition",
+    "van-button": "vant-weapp/button"
+}
+  
+}

@@ -1,0 +1,168 @@
+page{
+  background-color: #000
+}
+
+.header image{
+  width: 750rpx;
+  height: 320rpx;
+  margin: 0
+}
+.titleBox{
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  background-color: #fca104;
+  height: 40px;
+  margin: -5rpx 0 0 0
+}
+.titleBoxIcon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:40px;
+  width:60px;
+}
+.titleBoxText{
+  flex-grow:1
+}
+
+.bodyBox{
+  display: flex
+}
+.flexBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:200rpx;
+  width:230rpx;
+  
+}
+.redPoint{
+  width:25rpx;
+  height: 25rpx;
+  border-radius: 100%;
+  
+}
+.redPoint imgae{
+  width:25rpx;
+  height: 25rpx;
+  border-radius: 100%;
+}
+
+.leftBox{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300rpx;
+}
+.waterfall{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width:300rpx;
+    height:600rpx;
+    margin: 50rpx 0 0 0
+}
+.waterfall image{
+    width:270rpx;
+    height:220rpx
+}
+
+.bpDataBox{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  width:230rpx;
+  border-bottom: 5rpx solid #fff;
+}
+.bpTimeBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:230rpx;
+}
+
+.rightBox{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 450rpx;
+  padding: 20rpx 0 0 0
+}
+.buttonBox{
+width:450rpx;
+height:400rpx;
+display: flex;
+flex-direction: column;
+justify-content: space-around ;
+align-items: center;
+/* border-bottom: 1rpx solid #fca104; */
+
+}
+.oneKeyBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:210rpx;
+  height:210rpx;
+  border-radius: 100%;
+  border:6rpx solid #fff;
+  margin: 20rpx 0;
+  box-shadow: 0rpx 0rpx 50rpx #fff;
+}
+.oneKeyBox-top{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom:1rpx solid #fca104;
+  width:170rpx;
+  height:90rpx;
+  padding: 0 0 10rpx 0
+}
+.heartIcon image{
+  width:25rpx;
+  height:25rpx
+
+}
+.oneKeyBox-bottom{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width:170rpx;
+  height:100rpx;
+  padding:10rpx 0 0 0
+}
+.keyHover{
+  /* background-color:#fca104; */
+  border:15rpx solid #fca104
+}
+.slider-box{
+  display: flex;
+  align-items: center;
+  width:100%;
+  height:70rpx;
+  margin: 15rpx 0 0 0
+}
+.slider-box slider{
+  flex-basis:320rpx
+}
+.slider-title{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size:28rpx;
+  margin: 0 0 0 -5rpx
+}
+.slider-tip{
+  color:#fff;
+  width:100%;
+  height: 70rpx;
+  display: flex;
+  justify-content: center;
+  font-size: 28rpx
+
+}

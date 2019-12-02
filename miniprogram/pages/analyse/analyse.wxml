@@ -1,0 +1,110 @@
+<van-toast id="van-toast" />
+<canvas class="report" canvas-id="report" style="height:{{count*22+470}}px"></canvas>
+<view class="mask" wx:if="{{isMask}}" catchtouchmove="catchtap">
+    <view class="share" >
+        <view class="shareTitle">生成报告成功！</view>
+        <view class="shareFamous">幸福十分之九是建立在健康基础上的，健康就是一切。</view>
+        <view class="shareFamousName">——叔本华</view>
+        <image src="{{srcR}}" mode="aspectFit" style="border:5rpx #cccccc solid"></image>
+        <view class="shareFoot">
+        <van-icon name="flower-o" size="10px" color="#fca104"/> RECORD BY YOURSELF</view>
+        <view class="shareTip">
+            <view class="shareTipLeft">温馨提示：</view>
+            <view class="shareTipRight">请将报告保存至手机相册，分享给值得信任的专业医务人员。</view>
+        </view>
+        <view class="shareBtn">
+        <button type="primary" plain size="small" bindtap="saveReport">保存</button>
+        <button type="primary" plain size="small" bindtap="hideMask">取消</button>
+        </view>
+    </view>
+</view>
+    
+
+<view class="titleBox">
+    <view class="titleBlock"></view>
+    <view class="titleText">最新血压数据表</view>
+</view>
+<view class="canvasBox" style="z-index:1">
+    <canvas class="canvas" canvas-id="lineCanvas" style="z-index:2" hidden="{{flag}}"></canvas>
+</view>
+<view class="titleBox">
+    <view class="titleBlock"></view>
+    <view class="titleText">血压数据统计表</view>
+    <view wx:if="{{count==0}}"class="titleContent"> (暂无数据)</view>
+    <view wx:else class="titleContent">（最近 {{count}} 次）</view>
+</view>
+
+
+
+<view class="staBox">
+    <view class="staBlock"></view>
+    <view class="staTitle">收缩压</view>
+    <view class="staContainer">
+            <view class="staText">最高：</view>
+            <view class="staData">
+                <text wx:if="{{sbpmax!=null}}">{{sbpmax}}</text>
+            </view>
+            <view class="staText">mmHg</view>
+            <view class="staBlock"></view>
+            <view class="satText">最低：</view>
+            <view class="staData">
+                <text wx:if="{{sbpmin!=null}}">{{sbpmin}}</text>
+            </view>  
+            <view class="staText">mmHg</view>
+    </view>
+</view>
+
+<view class="staBox">
+    <view class="staBlock"></view>
+    <view class="staTitle">舒张压</view>
+    <view class="staContainer">
+            <view class="staText">最高：</view>
+            <view class="staData">
+                <text wx:if="{{dbpmax != null}}">{{dbpmax}}</text>
+            </view>
+            <view class="staText">mmHg</view>
+            <view class="staBlock"></view>
+            <view class="satText">最低：</view>
+            <view class="staData">
+                <text wx:if="{{dbpmin != null}}">{{dbpmin}}</text>
+            </view>  
+            <view class="staText">mmHg</view>
+    </view>
+</view>
+
+
+<view class="space-view"></view>
+
+<view class="titleBox">
+    <view class="titleBlock"></view>
+    <view class="titleText">血压数据列表</view>
+</view>
+<block wx:for="{{bpList}}" wx:key="*.this">
+<view class="listBox">
+    <view class="listBlock">
+        <view wx:if="{{item.isRed}}" class="redPoint"></view>
+    </view>
+    <view class="listContent">
+        <view class="listBp">{{item.bp}}</view>
+        <view class="listIcon">
+            <image src="../../images/{{item.isDay}}.png"
+            mode="widthFix"></image>
+        </view>
+        <view class="listDate">{{item.date}}</view>
+    </view>
+</view>
+</block>
+
+<van-transition
+  show="{{transFlag}}"
+  name="slide-right"
+  duration="{{ { enter: 1500, leave:1500 } }}">
+    <view class="note">
+        <view class="noteBlock"></view>
+        <view class="noteText">需要记录3次以上</view>
+    </view>
+</van-transition>
+
+<view class="reportBtn" bindtap="creatReportPic">
+    <view>生成报告</view>
+</view>

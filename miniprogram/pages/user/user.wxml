@@ -1,0 +1,109 @@
+<view class="header">
+  <image src="../../images/waterfall.gif" mode="widthFill"></image>
+</view>
+<view class="titleBox">
+<view class="titleBoxIcon">
+<van-icon name="comment-o"  size="24px" />
+</view>
+<view class="titleBoxText">
+<van-notice-bar 
+    color="#000" backgroundColor="#fca104"
+    text="家庭自测血压：在家里，使用经国际标准认证合格的上臂式电子血压计自测血压，收缩压≥135mmHg和/或舒张压≥85mmHg，需引起重视。"/>
+
+</view>
+</view>
+<van-toast id="van-toast" />
+
+
+<view  class="bodyBox">
+
+  <scroll-view scroll-y="true" style="height:800rpx;width:300rpx">
+    <view class="leftBox">
+
+    <view wx:if="{{waterfall}}" class="waterfall">
+        <image src="../../images/k3.png" mode="aspectFit" ></image> 
+        <image src="../../images/k4.png" mode="aspectFit" ></image> 
+    </view> 
+      
+      <block wx:for="{{bplist}}" wx:key="xxx">
+        <view class="flexBox" bindlongpress="longpress" data-id="{{item._id}}">
+        
+          <view class="bpDataBox">
+            <text class="numb-big numb-yellow">{{item.bp[0]}}</text>
+            <text class="numb-mid numb-yellow">/{{item.bp[1]}}</text>
+            <text class="numb-mid numb-yellow">/{{item.bp[2]}}</text>
+          </view>
+          <view>
+            <text class="numb-min numb-white">{{item.fd}}</text>
+          </view>
+          <view class="bpTimeBox">
+            <icon type="waiting" size="18" color="#07c160"></icon>
+            <text class="numb-min numb-white" decode="true">&nbsp;&nbsp;{{item.ft}}&nbsp;</text>
+            <block class="redPoint" wx:if="{{item.bp[0] > 140 || item.bp[1] >90}}">
+          <image src="../../images/redpoint.gif"  
+          mode="center" 
+          style="width:25rpx;height:25rpx;border-radius:100%" ></image>
+            </block>
+            <block class="redPoint" wx:elif="{{item.bp[0] < 90 || item.bp[1] < 60}}">
+          <image src="../../images/whitepoint.gif"  
+          mode="center" 
+          style="width:25rpx;height:25rpx;border-radius:100%" ></image>
+            </block>
+          </view>
+          
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+
+  <view class="rightBox">
+
+    
+    <view class="slider-box">
+      <slider bindchange="sbpSliderChange" min="60" max="220" value="120" show-value block-size="20"  activeColor="{{sbpActiveColor}}"/>
+      <view class="slider-title numb-white">高压</view>
+    </view>
+
+    <view class="slider-box">
+      <slider bindchange="dbpSliderChange" min="40" max="140" value="80" show-value block-size="20" activeColor="{{dbpActiveColor}}" />
+      <view class="slider-title numb-white">低压</view>
+    </view>
+
+    <view class="slider-box">
+      <slider bindchange="pulsSliderChange" min="35" max="180" value="60" show-value  block-size="20" activeColor="{{pulsActiveColor}}" />
+      <view class="slider-title numb-white">脉搏</view>
+    </view>
+
+    <view class="buttonBox">
+      <label for="recorder">
+        <view class="oneKeyBox" hover-class="keyHover" hover-start-time="0" hover-stay-time="300">
+          <view class="oneKeyBox-top">
+            <text class="numb-mid numb-white">一键记录</text>
+          </view>
+          <view class="oneKeyBox-bottom">
+            <text class="numb-min numb-gray">{{intervalTitle}}</text>
+            <text class="numb-min numb-gray">{{intervalString}}</text>
+          </view>
+        </view>
+      </label>
+      <button type="primary" 
+          plain size="mini" 
+          ontap="addRecorder" 
+          id="recorder" 
+          open-type="getUserInfo"
+          hidden="none">调整读数，点击一键记录</button>
+      
+    </view>
+</view>
+</view>
+
+  
+<van-popup
+  show="{{ show }}"
+  position="bottom"
+  custom-style="height: 16%;"
+  bind:close="onClose">
+  <button type="default" bindtap="deleteRecord">删除</button>
+  <button type="default" bindtap="onClose">取消</button>
+</van-popup>
+
