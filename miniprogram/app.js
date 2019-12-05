@@ -14,12 +14,32 @@ App({
         traceUser: true,
       })
     }
-
-    this.globalData = {
-      openid:'',
-      jump: 25
-
-    }
+    const db= wx.cloud.database()
+    
+    db.collection('contrl').where({
+        name:"themeContrl"
+    }).field({theme:true}).limit(1)
+    .get().then(res=>{
+        db.collection('contrl').where({
+            themeId:res.data[0].theme 
+        }).get().then(res2=>{
+            this.globalData.theme= {_theme:res2.data[0]}
+        })
+        .catch(err =>{console.log(err)})
+    }).catch(err =>{console.log(err)})
+    
+  },
+  watch: function(method){
+      var obj=this.globalData
+      Object.defineProperty(obj,"theme",{
+          configurable:true,
+          enumerable:true,
+          set: function(value){
+              this._theme = value._theme
+              method(value)
+          },
+          get: function(){return this.globalData}
+      })
   },
 
     delay: function (time) {
@@ -28,5 +48,10 @@ App({
                 resolve('delay' + time + ' done')
             }, time)
         })
+    },
+    globalData : {
+        openid: '',
+        jump: 25
+        
     }
 })

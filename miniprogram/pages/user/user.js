@@ -10,6 +10,7 @@ Page({
        * 页面的初始数据
        */
       data: {
+        theme: app.globalData.theme,
         openid: '',
         waterfall: false,//空数据填充开关
         sbpActiveColor: '#1aad19',
@@ -29,7 +30,9 @@ Page({
        * 生命周期函数--监听页面加载
        */
 onLoad: function(options) {
-    
+    this.setData({ theme: app.globalData._theme })
+    app.watch(this.watchBack)
+        
         // 已经授权，可以直接调用 getUserInfo 获取头像昵称
         wx.cloud.callFunction({
             name: 'getopenid'
@@ -84,6 +87,11 @@ onLoad: function(options) {
     
 
 },
+    watchBack: function(value){
+        this.setData({
+            theme:value._theme
+        })
+    },
 
 
 addRecorder: function(e) {

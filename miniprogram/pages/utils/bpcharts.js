@@ -1,6 +1,5 @@
 
-const charts = bpdata => {
-   
+const charts = (bpdata,theme)=> {
     var cate=[]
     var sbp=[],dbp=[]
     for (let i=0 ; i < bpdata.length; i++){
@@ -15,20 +14,20 @@ return new wxCharts({
     type: 'line',
     categories:cate,
     series: [{
-        name: '收缩压',
+        name: theme.sbp,
         data: sbp,
         format: function (val) {
             return val.toFixed(0) ;
         }
     }, {
-         name: '舒张压',
+         name: theme.dbp,
         data: dbp,
         format: function (val) {
             return val.toFixed(0) ;
         }
     }],
     yAxis: {
-        title: '血压 (mmHg)',
+        title: theme.bp +' (mmHg)',
         format: function (val) {
             return val.toFixed(0);
         },

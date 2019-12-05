@@ -7,7 +7,7 @@
 
                     <view class="messageTitle">标题(title)-20字以内</view>
                     <view class="messageTitleInput">
-                        <input name="title"type="text" maxlength="20"value="{{title}}"></input>
+                        <input name="title"type="text" maxlength="20" value="{{title}}"></input>
                     </view>
 
                     <view class="messageTitle">内容(content)-300字以内</view>
@@ -46,7 +46,46 @@
             </van-collapse-item>
         </van-collapse>
   </van-tab>
-  <van-tab title="控制开关"><van-cell title="建设中..." size="large" /></van-tab>
+  <van-tab title="主题开关">
+        <van-collapse value="{{ contrlActiveNames }}" bind:change="contrlOnChange">
+        <van-collapse-item title="主题控制" name="1" >
+                <form bindsubmit="themeContrlSubmit" bindreset="themeContrlReset">
+                <view class="messageTitle">主题(theme)</view>
+                    <radio-group class="messageBtnBox" name="theme">
+                        <radio  value="1" >THEME 01</radio>
+                        <radio  value="2" >THEME 02</radio>
+                    </radio-group>
+                    <view class="messageBtnBox">
+                        <button type="primary" size="mini" form-type="submit">上传信息</button>
+                        <button type="primary" size="mini" form-type="reset">重置表单</button>
+                    </view>
+                </form>
+        </van-collapse-item>
+        <van-collapse-item title="新增主题" name="2" >
+               <form bindsubmit="addThemeSubmit" bindreset="addThemeReset">
+                    <view class="messageTitle">字段(themeId)</view>
+                    <view class="messageTitleInput">
+                        <input name="themeId" type="number" value="{{fill}}"></input>
+                    </view>
+                    <block wx:for="{{['sp','dp','p','sbp','dbp','bp','dc','mes']}}" wx:key="{{index}}">
+                    <view class="messageTitle">{{index}}字段({{item}})</view>
+                    <view class="messageTitleInput">
+                        <input name="{{item}}"type="text"  value="{{fill}}"></input>
+                    </view>
+                    </block>
+                    <view class="messageBtnBox">
+                        <button type="primary" size="mini" form-type="submit">上传信息</button>
+                        <button type="primary" size="mini" form-type="reset">重置表单</button>
+                    </view>
+               </form>
+        </van-collapse-item>
+        <van-collapse-item title="修改主题" name="3" >
+                删除
+        </van-collapse-item>
+
+
+        </van-collapse>
+  </van-tab>
   <van-tab title="商品管理"><van-cell title="建设中..." size="large" /></van-tab>
   <van-tab title="其它管理"><van-cell title="建设中..." size="large" /></van-tab>
 </van-tabs>

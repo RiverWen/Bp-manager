@@ -11,6 +11,7 @@ Page({
      */
     data: {
         messageActiveNames: [],
+        contrlActiveNames:[],
         messageSw:true,
         tempFilePaths:[]
         
@@ -28,12 +29,71 @@ Page({
             messageActiveNames: e.detail
         })
     },
+    contrlOnChange: function (e) {
+        this.setData({
+            contrlActiveNames: e.detail
+        })
+    },
     onSwitchChange: function(event){
         let id = event.currentTarget.dataset.id
         var obj={}
         obj[id] = event.detail
         this.setData(obj)
     },
+
+    themeContrlSubmit: function(e){
+        // console.log(e.detail.value)
+        if(e.detail.value.theme){
+            wx.cloud.callFunction({
+                name:'updateTheme',
+                data: {theme:e.detail.value.theme}
+            }).then(res =>{
+                console.log(res)
+                this.themeContrlReset()
+                })
+            .catch(err =>{console.log(err)})
+        }else{
+            Toast('必需选一个主题！')
+        }
+    },
+    themeContrlReset: function(e){
+        this.setData({ contrlActiveNames:[]})
+    },
+    addThemeReset: function(e){
+        this.setData({ contrlActiveNames:[]})
+    },
+
+    addThemeSubmit: function(e){
+        let theme=e.detail.value
+        for(let key in theme){
+            if(theme[key] == ''){
+                Toast(key + '不能为空！')
+                return
+            }
+        }
+        if( ['1','2'].indexOf(theme.themeId) == -1){
+            Toast( 'themeId字段只能是1或2')
+            return
+        }
+        theme['name']='theme'
+        db.collection('contrl').where({
+            themeId: theme.themeId
+        }).count().then(res=>{
+            if(res.total==0){
+                db.collection('contrl').add({
+                    data: theme
+                }).then(res2 => {
+                    Toast('上传成功！')
+                    this.addThemeReset()
+                    this.setData({ fill: "" })
+                }).catch(err => { console.log(err) })
+            }else{
+                Toast('themeId already exists！')
+            }
+        })
+        
+    },
+    
 
     newMessageSubmit: function (event){
         var obj=event.detail.value

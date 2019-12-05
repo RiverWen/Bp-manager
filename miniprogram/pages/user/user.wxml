@@ -8,9 +8,10 @@
 <view class="titleBoxText">
 <van-notice-bar 
     color="#000" backgroundColor="#fca104"
-    text="家庭自测血压：在家里，使用经国际标准认证合格的上臂式电子血压计自测血压，收缩压≥135mmHg和/或舒张压≥85mmHg，需引起重视。"/>
+    text="{{theme.mes}}"/>
 
 </view>
+
 </view>
 <van-toast id="van-toast" />
 
@@ -61,17 +62,17 @@
     
     <view class="slider-box">
       <slider bindchange="sbpSliderChange" min="60" max="220" value="120" show-value block-size="20"  activeColor="{{sbpActiveColor}}"/>
-      <view class="slider-title numb-white">高压</view>
+      <view class="slider-title numb-white">{{theme.sp}}</view>
     </view>
 
     <view class="slider-box">
       <slider bindchange="dbpSliderChange" min="40" max="140" value="80" show-value block-size="20" activeColor="{{dbpActiveColor}}" />
-      <view class="slider-title numb-white">低压</view>
+      <view class="slider-title numb-white">{{theme.dp}}</view>
     </view>
 
     <view class="slider-box">
       <slider bindchange="pulsSliderChange" min="35" max="180" value="60" show-value  block-size="20" activeColor="{{pulsActiveColor}}" />
-      <view class="slider-title numb-white">脉搏</view>
+      <view class="slider-title numb-white">{{theme.p}}</view>
     </view>
 
     <view class="buttonBox">

@@ -13,7 +13,7 @@ const reportPic =  (tempPath,data) =>{
         context.setTextAlign('center')
         context.setFontSize(16)
         context.setFillStyle('#666666')
-        context.fillText('自测血压报告',175,startY)
+        context.fillText('自测'+data.theme.bp+'报告',175,startY)
         context.setFontSize(11)
         context.setFillStyle('#fca104')
     context.fillText('乌贼王子@小程序',175,startY+17)
@@ -21,13 +21,13 @@ const reportPic =  (tempPath,data) =>{
         context.fillRect(125, startY + 3 , 100, 2)
 
         startY += 15
-        firtsLevelTitle(startY, '最新血压数据表', context)
+        firtsLevelTitle(startY, '最新'+data.theme.bp+'数据表', context)
 
         startY += 30
         context.drawImage(tempPath, 0, startY, 345, 280)
         
         startY += 260
-        firtsLevelTitle(startY,'血压数据统计表',context)
+        firtsLevelTitle(startY, data.theme.bp+'数据统计表',context)
         context.setFillStyle('#999999')
         context.setTextAlign('left')
         context.setFontSize(11)
@@ -39,7 +39,7 @@ const reportPic =  (tempPath,data) =>{
         context.fillRect(5,startY,340,1)
         context.setFillStyle('#666666')
         context.setFontSize(13)
-        context.fillText('收缩压',15,startY-4)
+        context.fillText(data.theme.sbp,15,startY-4)
         context.setFillStyle('#999999')
         context.setFontSize(12)
         context.fillText('最高：', 80, startY - 4)
@@ -57,7 +57,7 @@ const reportPic =  (tempPath,data) =>{
         context.fillRect(5,startY,340,1)
         context.setFillStyle('#666666')
         context.setFontSize(13)
-        context.fillText('舒张压',15,startY-4)
+        context.fillText(data.theme.dbp,15,startY-4)
         context.setFillStyle('#999999')
         context.setFontSize(12)
         context.fillText('最高：', 80, startY - 4)
@@ -71,7 +71,7 @@ const reportPic =  (tempPath,data) =>{
         
         startY += 10
         context.setTextAlign('left')
-        firtsLevelTitle(startY, '血压数据列表', context)
+        firtsLevelTitle(startY, data.theme.bp+'数据列表', context)
 
         startY += 50
         for( let i=0; i < data.bpList.length; i++){

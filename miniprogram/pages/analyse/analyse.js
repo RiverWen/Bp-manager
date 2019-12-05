@@ -18,6 +18,7 @@ Page({
   },
 
 getBpCharts: function(option){
+    var that= this
     bprecorder.where({
         _openid: app.globalData.openid
     }).field({
@@ -26,8 +27,8 @@ getBpCharts: function(option){
     }).orderBy('date','desc')
     .limit(6).get({
         success: res=>{
-            // console.log(res.data)
-            bpcharts.charts(res.data)
+            // console.log(that.data.theme)
+            bpcharts.charts(res.data,that.data.theme)
         },
         fail: err=>{console.error(err)}
     })
@@ -55,8 +56,15 @@ dida: function(ani,sta){
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      this.setData({theme:app.globalData._theme})
+      app.watch(this.watchBack)
   },
+    watchBack: function (value) {
+        console.log('watchBack2!')
+        this.setData({
+            theme: value._theme
+        })
+    },
 
 hideMask: function(){
     var that= this
@@ -107,7 +115,6 @@ delay: function(time){
 },
 
 saveReport: function(){
-    console.log(this.data.srcR)
     wx.saveImageToPhotosAlbum({
         filePath: this.data.srcR,
         success: res=>{

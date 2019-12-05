@@ -11,13 +11,13 @@ Page({
   data: {
       contrlPage: false,
       help:[
-          { step: '01', title: '调整滑块', text:'滑动设置滑块，调整至您测得的血压读数。',src:'../../images/i1.png'},
+          { step: '01', title: '调整滑块', text:'滑动设置滑块，调整至您测量得到的读数。',src:'../../images/i1.png'},
           { step: '02', title: '一键记录', text:'点击一键记录按钮，保存记录。',src:'../../images/i2.png'},
-          { step: '03', title: '生成报告', text:'点击生成报告按钮，将报告存入您的手机相册，即可分享给您的医生。',src:'../../images/i3.png'}
+          { step: '03', title: '生成报告', text:'点击生成报告按钮，将报告存入您的手机相册，即可分享给专业人士。',src:'../../images/i3.png'}
       ],
       activeNames: ['3'],
       messageList:[],
-      prePage:10,
+      prePage:2,
       starValue: 0
   },
 
@@ -71,10 +71,18 @@ starSubmit:function(event){
     }).catch(err =>{console.log(err)})
 
 },
+    watchBack: function (value) {
+        console.log('watchBack!')
+        this.setData({
+            theme: value._theme
+        })
+    },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+      this.setData({ theme: app.globalData._theme })
+      app.watch(this.watchBack)
       if (app.globalData.openid == 'oYqEF5no7Fq9vm6GqTkfDChkw0Sk') { 
           this.setData({ contrlPage: true, activeNames: [] }) }
       this.getAllMessage()
